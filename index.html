@@ -2,46 +2,136 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paisaje de Aprendizaje</title>
+  <title>Paisaje de Aprendizaje - Flipped Classroom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #005baa;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .logo {
-      max-height: 100px;
-    }
-    main {
-      padding: 2rem;
-    }
-    .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+    body { font-family: Arial; background: #f2f2f2; margin: 0; padding: 0; }
+    header, section { padding: 2rem; margin: auto; max-width: 900px; }
+    header { background-color: #005baa; color: white; text-align: center; }
+    .logo { max-height: 80px; }
+    .card { background: white; border-radius: 10px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    h2 { color: #005baa; }
+    .question, .quiz-question { font-weight: bold; }
+    .option, .quiz-option { margin: 0.5rem 0; }
+    button { background: #005baa; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
+    .result { margin-top: 1rem; font-weight: bold; }
+    iframe { width: 100%; height: 315px; margin-top: 1rem; }
+    hr { margin: 2rem 0; border: 0; border-top: 1px solid #ccc; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Paisaje de Aprendizaje" class="logo">
-    <h1>Paisaje de Aprendizaje</h1>
-  </header>
 
-  <main>
-    <div class="container">
-      <h2>¿Qué es un Paisaje de Aprendizaje?</h2>
-      <p>Un paisaje de aprendizaje es una propuesta didáctica visual e interactiva que combina elementos del Diseño Universal para el Aprendizaje (DUA), la gamificación y el aprendizaje personalizado. Su objetivo es guiar al estudiante a través de rutas formativas flexibles, fomentando la autonomía, la motivación y el pensamiento crítico mediante recursos digitales diversos.</p>
-    </div>
-  </main>
+<header>
+  <img src="logo.png" alt="Logo Paisaje de Aprendizaje" class="logo">
+  <h1>Paisaje de Aprendizaje</h1>
+</header>
+
+<section class="card">
+  <h2>¿Qué es un Paisaje de Aprendizaje?</h2>
+  <p>Un paisaje de aprendizaje es una herramienta pedagógica que combina el Diseño Universal para el Aprendizaje (DUA), la gamificación y las rutas personalizadas. Esta propuesta visual e interactiva permite adaptar los procesos de enseñanza a los diferentes estilos y ritmos de aprendizaje del alumnado.</p>
+</section>
+
+<!-- MÓDULO 1 -->
+<section class="card">
+  <h2>Módulo 1: Fundamentos del Paisaje de Aprendizaje</h2>
+
+  <h3>Actividad Interactiva</h3>
+  <p class="question">¿Qué elemento es esencial en un paisaje de aprendizaje?</p>
+  <div class="option"><input type="radio" name="q1" value="a"> Memorización tradicional</div>
+  <div class="option"><input type="radio" name="q1" value="b"> Personalización del aprendizaje</div>
+  <div class="option"><input type="radio" name="q1" value="c"> Exámenes estandarizados</div>
+  <button onclick="checkQuiz('q1','b','res1')">Enviar</button>
+  <div id="res1" class="result"></div>
+
+  <h3>Justificación del recurso TIC</h3>
+  <p>Esta actividad interactiva utiliza HTML y JavaScript para fomentar el aprendizaje activo durante la clase. La retroalimentación inmediata estimula el pensamiento crítico y permite aplicar los conocimientos previos trabajados en casa mediante videos y lecturas.</p>
+
+  <h3>Video Enriquecido</h3>
+  <iframe src="https://www.youtube.com/embed/8FvlEkF0A7Y" title="Video paisaje de aprendizaje"></iframe>
+  <p><strong>Justificación:</strong> Este video se proporciona como contenido previo a clase. Permite que los estudiantes comprendan visualmente los conceptos antes de participar en actividades más complejas en el aula.</p>
+
+  <h3>Cuestionario de Autoevaluación</h3>
+  <p class="quiz-question">¿Cuál es el propósito principal del DUA en un paisaje de aprendizaje?</p>
+  <div class="quiz-option"><input type="radio" name="q2" value="a"> Uniformizar el aprendizaje</div>
+  <div class="quiz-option"><input type="radio" name="q2" value="b"> Responder a la diversidad del alumnado</div>
+  <div class="quiz-option"><input type="radio" name="q2" value="c"> Aumentar la carga de trabajo docente</div>
+  <button onclick="checkQuiz('q2','b','res2')">Enviar</button>
+  <div id="res2" class="result"></div>
+</section>
+
+<!-- MÓDULO 2 -->
+<section class="card">
+  <h2>Módulo 2: Elementos visuales e infografías</h2>
+
+  <h3>Actividad Interactiva</h3>
+  <p class="question">¿Cuál es una herramienta ideal para crear infografías educativas?</p>
+  <div class="option"><input type="radio" name="q3" value="a"> Microsoft Word</div>
+  <div class="option"><input type="radio" name="q3" value="b"> Canva</div>
+  <div class="option"><input type="radio" name="q3" value="c"> Excel</div>
+  <button onclick="checkQuiz('q3','b','res3')">Enviar</button>
+  <div id="res3" class="result"></div>
+
+  <h3>Justificación del recurso TIC</h3>
+  <p>Canva permite a los estudiantes crear productos visuales que fortalecen la comprensión. En la clase invertida, estos recursos se elaboran como parte de una actividad de profundización sobre el tema.</p>
+
+  <h3>Video Enriquecido</h3>
+  <iframe src="https://www.youtube.com/embed/Nd1-VZ1uD2E" title="Video Canva educación"></iframe>
+  <p><strong>Justificación:</strong> Este video fue compartido antes de la clase para introducir herramientas de diseño. Así los estudiantes llegan preparados para aplicar estos recursos visuales en su paisaje de aprendizaje.</p>
+
+  <h3>Cuestionario de Autoevaluación</h3>
+  <p class="quiz-question">¿Por qué usar infografías en un paisaje de aprendizaje?</p>
+  <div class="quiz-option"><input type="radio" name="q4" value="a"> Para decorar las tareas</div>
+  <div class="quiz-option"><input type="radio" name="q4" value="b"> Para visualizar y sintetizar información clave</div>
+  <div class="quiz-option"><input type="radio" name="q4" value="c"> Para sustituir los textos escritos</div>
+  <button onclick="checkQuiz('q4','b','res4')">Enviar</button>
+  <div id="res4" class="result"></div>
+</section>
+
+<!-- MÓDULO 3 -->
+<section class="card">
+  <h2>Módulo 3: Gamificación y rutas de aprendizaje</h2>
+
+  <h3>Actividad Interactiva</h3>
+  <p class="question">¿Qué elemento fomenta la motivación en paisajes de aprendizaje?</p>
+  <div class="option"><input type="radio" name="q5" value="a"> Castigos</div>
+  <div class="option"><input type="radio" name="q5" value="b"> Recompensas y niveles</div>
+  <div class="option"><input type="radio" name="q5" value="c"> Lecturas extensas</div>
+  <button onclick="checkQuiz('q5','b','res5')">Enviar</button>
+  <div id="res5" class="result"></div>
+
+  <h3>Justificación del recurso TIC</h3>
+  <p>Las actividades gamificadas con recompensas permiten mantener la motivación. Aquí se trabajan niveles cognitivos superiores, ya que los estudiantes deben tomar decisiones estratégicas sobre su ruta.</p>
+
+  <h3>Video Enriquecido</h3>
+  <iframe src="https://www.youtube.com/embed/zMqvR1hYQ1Y" title="Gamificación educativa"></iframe>
+  <p><strong>Justificación:</strong> El video introdujo los principios de gamificación en el estudio previo. En clase, se construyen las rutas interactivas utilizando mapas u organizadores visuales.</p>
+
+  <h3>Cuestionario de Autoevaluación</h3>
+  <p class="quiz-question">¿Qué objetivo tiene la gamificación?</p>
+  <div class="quiz-option"><input type="radio" name="q6" value="a"> Castigar errores</div>
+  <div class="quiz-option"><input type="radio" name="q6" value="b"> Aumentar la participación y compromiso</div>
+  <div class="quiz-option"><input type="radio" name="q6" value="c"> Eliminar la evaluación</div>
+  <button onclick="checkQuiz('q6','b','res6')">Enviar</button>
+  <div id="res6" class="result"></div>
+</section>
+
+<!-- Script para respuestas -->
+<script>
+  function checkQuiz(name, correcta, resultId) {
+    const seleccion = document.querySelector(`input[name="${name}"]:checked`);
+    const result = document.getElementById(resultId);
+    if (!seleccion) {
+      result.textContent = "Selecciona una respuesta.";
+      result.style.color = "red";
+    } else if (seleccion.value === correcta) {
+      result.textContent = "¡Correcto!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrecto. Intenta de nuevo.";
+      result.style.color = "red";
+    }
+  }
+</script>
+
 </body>
 </html>
