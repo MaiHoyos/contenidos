@@ -43,46 +43,91 @@
   <p><a href="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?utm_content=DAGnxtOqDhk&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Mission: Math</a> de Maileen Julissa Hoyos Castellanos</p>
 </section>
 
-
-<!-- MÓDULO 1 -->
-<section>
-  <h2>Módulo 1: Actividad Interactiva</h2>
-
-  <p class="question">¿Cuál de las siguientes opciones representa mejor el propósito de un paisaje de aprendizaje?</p>
-  <div class="option"><input type="radio" name="q1" value="a"> Memorizar datos mediante exámenes estandarizados</div>
-  <div class="option"><input type="radio" name="q1" value="b"> Adaptar el aprendizaje a distintos ritmos, estilos y motivaciones</div>
-  <div class="option"><input type="radio" name="q1" value="c"> Repetir contenidos de forma lineal</div>
-  <button onclick="checkAnswer('q1', 'b', 'res1')">Enviar</button>
-  <div class="result" id="res1"></div>
-
-  <h3>Justificación del uso TIC en Aula Invertida</h3>
-  <p>Esta actividad se ha creado usando HTML y JavaScript, permitiendo una retroalimentación inmediata. En el modelo de aula invertida, este tipo de recursos se utilizan durante la clase para fomentar la participación activa, comprobar comprensión y aplicar lo aprendido. Contribuye al aprendizaje del paisaje al evidenciar conceptos clave de forma práctica.</p>
+  <section>
+  <h2>Explora los Módulos</h2>
+  <div style="text-align: center; margin-top: 1rem;">
+    <button onclick="openModal('modal1')">Módulo 1</button>
+    <button onclick="openModal('modal2')">Módulo 2</button>
+    <button onclick="openModal('modal3')">Módulo 3</button>
+  </div>
 </section>
 
-<!-- MÓDULO 2 -->
-<section>
-  <h2>Módulo 2: Video enriquecido</h2>
+  <!-- Estilo para modales -->
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+  }
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #005baa;
+    cursor: pointer;
+  }
+  .modal h2 {
+    color: #005baa;
+  }
+</style>
 
-  <iframe src="https://www.youtube.com/embed/8FvlEkF0A7Y" title="Video sobre paisajes de aprendizaje"></iframe>
+<!-- Módulo 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Módulo 1: Actividad Interactiva</h2>
+    <p><strong>Pregunta:</strong> ¿Cuál de las siguientes opciones representa mejor el propósito de un paisaje de aprendizaje?</p>
+    <div><input type="radio" name="q1" value="a"> Memorizar datos mediante exámenes estandarizados</div>
+    <div><input type="radio" name="q1" value="b"> Adaptar el aprendizaje a distintos ritmos, estilos y motivaciones</div>
+    <div><input type="radio" name="q1" value="c"> Repetir contenidos de forma lineal</div>
+    <button onclick="checkAnswer('q1', 'b', 'res1')">Enviar</button>
+    <div class="result" id="res1"></div>
+    <h3>Justificación:</h3>
+    <p>Esta actividad fomenta la aplicación de conceptos en clase a través de TIC, permitiendo retroalimentación inmediata. Es útil en el aula invertida porque trabaja niveles superiores del pensamiento tras el estudio previo en casa.</p>
+  </div>
+</div>
 
-  <h3>Justificación del uso del video</h3>
-  <p>Este video fue utilizado como recurso previo al encuentro sincrónico, permitiendo que los estudiantes comprendan los conceptos básicos del paisaje de aprendizaje desde casa. Así, se liberan tiempos en el aula para actividades prácticas, discusión y profundización, abordando niveles cognitivos superiores del modelo flipped classroom.</p>
-</section>
+<!-- Módulo 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Módulo 2: Video Enriquecido</h2>
+    <iframe src="https://www.youtube.com/embed/8FvlEkF0A7Y" allowfullscreen></iframe>
+    <h3>Justificación:</h3>
+    <p>El video fue usado como recurso previo en el modelo flipped. Permite a los estudiantes adquirir los conocimientos teóricos en casa, y llegar al aula listos para desarrollar actividades prácticas sobre paisajes de aprendizaje.</p>
+  </div>
+</div>
 
-<!-- MÓDULO 3 -->
-<section>
-  <h2>Módulo 3: Cuestionario de Autoevaluación</h2>
+<!-- Módulo 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>Módulo 3: Cuestionario de Autoevaluación</h2>
+    <p><strong>Pregunta:</strong> ¿Qué elemento se asocia directamente con los paisajes de aprendizaje?</p>
+    <div><input type="radio" name="q2" value="a"> Evaluación uniforme</div>
+    <div><input type="radio" name="q2" value="b"> Itinerarios personalizados de aprendizaje</div>
+    <div><input type="radio" name="q2" value="c"> Repetición mecánica de contenidos</div>
+    <button onclick="checkAnswer('q2', 'b', 'res2')">Enviar</button>
+    <div class="result" id="res2"></div>
+    <h3>Justificación:</h3>
+    <p>El cuestionario permite que el estudiante compruebe su comprensión de forma autónoma, lo que mejora la autorregulación del aprendizaje y fortalece el enfoque flexible del paisaje de aprendizaje.</p>
+  </div>
+</div>
 
-  <p class="question">¿Qué elemento se asocia directamente con los paisajes de aprendizaje?</p>
-  <div class="option"><input type="radio" name="q2" value="a"> Evaluación uniforme</div>
-  <div class="option"><input type="radio" name="q2" value="b"> Itinerarios personalizados de aprendizaje</div>
-  <div class="option"><input type="radio" name="q2" value="c"> Repetición mecánica de contenidos</div>
-  <button onclick="checkAnswer('q2', 'b', 'res2')">Enviar</button>
-  <div class="result" id="res2"></div>
-
-  <h3>Justificación del cuestionario</h3>
-  <p>El cuestionario fue creado durante el examen como herramienta de autoevaluación, permitiendo al estudiante validar su comprensión del tema. Esta estrategia fomenta la autorregulación y permite al docente ajustar la enseñanza en tiempo real, facilitando el aprendizaje profundo del concepto de paisaje de aprendizaje.</p>
-</section>
 
 <!-- Script para respuestas -->
 <script>
@@ -100,6 +145,33 @@
       result.style.color = "red";
     }
   }
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  function checkAnswer(name, correct, resultId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const result = document.getElementById(resultId);
+    if (!selected) {
+      result.textContent = "Por favor selecciona una opción.";
+      result.style.color = "red";
+    } else if (selected.value === correct) {
+      result.textContent = "¡Correcto!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrecto. Revisa el contenido.";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+  
 </script>
 
 </body>
