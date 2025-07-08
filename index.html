@@ -49,6 +49,7 @@
     <button onclick="openModal('modal1')">Módulo 1</button>
     <button onclick="openModal('modal2')">Módulo 2</button>
     <button onclick="openModal('modal3')">Módulo 3</button>
+
   </div>
 </section>
 
@@ -131,20 +132,6 @@
 
 <!-- Script para respuestas -->
 <script>
-  function checkAnswer(name, correct, resultId) {
-    const selected = document.querySelector(`input[name="${name}"]:checked`);
-    const result = document.getElementById(resultId);
-    if (!selected) {
-      result.textContent = "Por favor selecciona una opción.";
-      result.style.color = "red";
-    } else if (selected.value === correct) {
-      result.textContent = "¡Correcto!";
-      result.style.color = "green";
-    } else {
-      result.textContent = "Incorrecto. Revisa el contenido.";
-      result.style.color = "red";
-    }
-  }
 
   <script>
   function openModal(id) {
@@ -169,8 +156,7 @@
       result.style.color = "red";
     }
   }
-</script>
-
+ 
   
 </script>
 
