@@ -8,93 +8,142 @@
   <style>
     body { margin:0; padding:0; background:#1a1a1a; color:#fff; font-family:'Press Start 2P', monospace; }
     header { background:#000080; color:#fff; display:flex; align-items:center; justify-content:space-between; padding:1rem; border-bottom:4px solid #00ffff; }
+    header h1 { margin:0; font-size:1rem; }
     nav a { color:#00ffff; text-decoration:none; font-size:0.75rem; margin:0 0.5rem; }
     main { padding:2rem; }
     section { margin-bottom:2rem; }
-    h2 { color:#ff00ff; font-size:1.25rem; text-shadow:2px 2px #000; }
-    h3 { color:#00ff00; font-size:1rem; text-shadow:1px 1px #000; }
-    .btn { display:inline-block; padding:0.75rem 1.5rem; margin:0.5rem; background:#008000; color:#fff; text-decoration:none; border:4px solid #00ff00; font-size:0.75rem; box-shadow:4px 4px 0 #000; }
-    #progress-bar { width:100%; background:#555; border:4px solid #777; height:16px; margin:0.5rem 0; }
+    h2 { color:#ff00ff; font-size:1.25rem; text-shadow:2px 2px #000; margin-bottom:0.5rem; }
+    h3 { color:#00ff00; font-size:1rem; text-shadow:1px 1px #000; margin:1rem 0 0.5rem; }
+    p, label { font-size:0.75rem; line-height:1.2; }
+    .btn { display:inline-block; padding:0.75rem 1.5rem; margin:0.5rem 0; background:#008000; color:#fff; text-decoration:none; border:4px solid #00ff00; font-size:0.75rem; box-shadow:4px 4px 0 #000; cursor:pointer; }
+    #progress-bar { width:100%; background:#555; border:4px solid #777; height:16px; margin:1rem 0; }
     #progress { height:100%; width:0; background:#00ff00; }
     #points { color:#ffff00; }
-    /* pixelated effect */
     img, iframe { image-rendering:pixelated; }
+    textarea {
+      width: 100%; 
+      background: #000; 
+      color: #fff; 
+      border: 4px solid #00ff00; 
+      box-shadow: 4px 4px 0 #000; 
+      font-family: 'Press Start 2P', monospace; 
+      font-size: 0.75rem; 
+      padding: 0.5rem;
+      resize: vertical;
+    }
+    form div { margin-bottom: 1rem; }
   </style>
 </head>
 <body>
   <header>
-    <div id="logo"><img src="logo.png" alt="Logo" style="height:48px; image-rendering:pixelated;"></div>
-    <h1 style="font-size:1rem;">PAISAJE DE APRENDIZAJE</h1>
+    <div id="logo"><img src="logo.png" alt="Logo" style="height:48px;"></div>
+    <h1>PAISAJE DE APRENDIZAJE</h1>
     <nav>
       <a href="#preclas">PRE-CLASE</a>
       <a href="#clase">EN CLASE</a>
       <a href="#progreso">PROGRESO</a>
+      <a href="#autoeval">AUTOEVALUACIÓN</a>
     </nav>
   </header>
   <main>
-    <!-- Pre-clase: definición, video y ejemplo -->
+    <!-- Sección Pre-clase -->
     <section id="preclas">
       <h2>PRE-CLASE</h2>
       <p><strong>¿Qué es un Paisaje de Aprendizaje?</strong> Conjunto de recursos y espacios organizados para facilitar el aprendizaje autónomo y colaborativo, adaptándose a ritmos y estilos personales.</p>
-
-
-
       <h3>Video Introductorio</h3>
       <div style="position:relative;width:100%;height:0;padding-top:56.25%;box-shadow:0 2px 8px rgba(63,69,81,0.16);margin:1.6em 0 0.9em;border-radius:8px;overflow:hidden;">
-        <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;" src="https://www.youtube.com/embed/FGWZi9XurtE?si=IN1u1ssIJqy7wivV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe loading="lazy" style="position:absolute;width:100%;height:100%;border:none;" src="https://www.youtube.com/embed/FGWZi9XurtE?si=IN1u1ssIJqy7wivV" title="Video Introductorio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
       <a href="#" class="btn completar" data-activity="video2">MARCAR VIDEO</a>
-
-
       <h3>El siguiente es un ejemplo</h3>
       <div style="position:relative;width:100%;height:0;padding-top:66.6255%;box-shadow:0 2px 8px rgba(63,69,81,0.16);margin:1.6em 0 0.9em;border-radius:8px;overflow:hidden;">
-        <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;" src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen></iframe>
-
+        <iframe loading="lazy" style="position:absolute;width:100%;height:100%;border:none;" src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen></iframe>
       </div>
-
       <a href="#" class="btn completar" data-activity="video1">MARCAR EJEMPLO</a>
     </section>
-
-    <!-- En clase: juego inmersivo -->
+    <!-- Sección En clase -->
     <section id="clase">
       <h2>EN CLASE</h2>
       <p>A continuación, realiza el juego de matching para reforzar conceptos:</p>
       <h3>Matching Paisaje de Aprendizaje</h3>
       <div style="position:relative;width:100%;height:0;padding-top:86.79%;box-shadow:0 2px 8px rgba(63,69,81,0.16);margin:1.6em 0 0.9em;border-radius:8px;overflow:hidden;">
-        <iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/24585474-empareja_los_conceptos_del_paisaje_de_aprendizaje.html" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;"></iframe>
+        <iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" loading="lazy" style="position:absolute;width:100%;height:100%;border:none;" src="https://es.educaplay.com/juego/24585474-empareja_los_conceptos_del_paisaje_de_aprendizaje.html"></iframe>
       </div>
       <a href="#" class="btn completar" data-activity="juego1">MARCAR JUEGO</a>
     </section>
-
-    <!-- Progreso: barra y puntos -->
+    <!-- Sección Progreso -->
     <section id="progreso">
       <h2>PROGRESO</h2>
       <div id="progress-bar"><div id="progress"></div></div>
       <p>Puntos: <span id="points">0</span></p>
     </section>
+    <!-- Sección Autoevaluación -->
+    <section id="autoeval">
+      <h2>AUTOEVALUACIÓN</h2>
+      <p>Completa tus respuestas aquí mismo:</p>
+      <form id="quiz">
+        <div>
+          <label for="q1">1. ¿Qué elemento de un paisaje de aprendizaje permite al estudiante seleccionar actividades según su ritmo?</label><br>
+          <textarea id="q1" name="q1" rows="2"></textarea>
+        </div>
+        <div>
+          <label for="q2">2. ¿Cómo se denomina la retroalimentación que ocurre durante el proceso de aprendizaje para ajustar estrategias?</label><br>
+          <textarea id="q2" name="q2" rows="2"></textarea>
+        </div>
+        <div>
+          <label for="q3">3. Selecciona el término que corresponde a un recurso que combina texto, audio e imágenes:</label><br>
+          <label><input type="radio" name="q3" value="Recurso multimodal"> Recurso multimodal</label><br>
+          <label><input type="radio" name="q3" value="Evaluación formativa"> Evaluación formativa</label><br>
+          <label><input type="radio" name="q3" value="Espacio de colaboración"> Espacio de colaboración</label>
+        </div>
+        <div>
+          <label for="q4">4. ¿Cuál es la característica principal de una actividad asincrónica?</label><br>
+          <textarea id="q4" name="q4" rows="2"></textarea>
+        </div>
+        <div>
+          <label for="q5">5. ¿Qué nivel cognitivo favorece principalmente la actividad de marcado de completado tras ver el video?</label><br>
+          <textarea id="q5" name="q5" rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar respuestas</button>
+      </form>
+    </section>
   </main>
   <script>
+    // marcar video, ejemplo y juego
     document.querySelectorAll('.completar').forEach(btn => {
       btn.addEventListener('click', () => {
         const act = btn.dataset.activity;
-        let completed = JSON.parse(localStorage.getItem('completed'))||{};
-        if (!completed[act]) {
-          completed[act] = true;
-          localStorage.setItem('completed', JSON.stringify(completed));
+        let comp = JSON.parse(localStorage.getItem('completed'))||{};
+        if (!comp[act]) {
+          comp[act] = true;
+          localStorage.setItem('completed', JSON.stringify(comp));
           updateProgress();
         }
       });
     });
     function updateProgress() {
-      const completed = JSON.parse(localStorage.getItem('completed'))||{};
+      const comp = JSON.parse(localStorage.getItem('completed'))||{};
       const total = document.querySelectorAll('.completar').length;
-      const done = Object.keys(completed).length;
-      const percent = (done/total)*100;
-      document.getElementById('progress').style.width = percent + '%';
+      const done = Object.keys(comp).length;
+      document.getElementById('progress').style.width = (done/total*100) + '%';
       document.getElementById('points').textContent = done * 10;
     }
     updateProgress();
+
+    // procesar formularios de autoevaluación
+    document.getElementById('quiz').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // opcional: aquí podrías guardar las respuestas en localStorage
+      let comp = JSON.parse(localStorage.getItem('completed'))||{};
+      if (!comp['quiz1']) {
+        comp['quiz1'] = true;
+        localStorage.setItem('completed', JSON.stringify(comp));
+        updateProgress();
+      }
+      // deshabilitar inputs y botón
+      this.querySelectorAll('textarea, input').forEach(i => i.disabled = true);
+      alert('¡Respuestas enviadas! Gracias por tu participación.');
+    });
   </script>
 </body>
 </html>
