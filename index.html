@@ -12,6 +12,7 @@
     main { padding:2rem; }
     section { margin-bottom:2rem; }
     h2 { color:#ff00ff; font-size:1.25rem; text-shadow:2px 2px #000; }
+    h3 { color:#00ff00; font-size:1rem; text-shadow:1px 1px #000; }
     .btn { display:inline-block; padding:0.75rem 1.5rem; margin:0.5rem; background:#008000; color:#fff; text-decoration:none; border:4px solid #00ff00; font-size:0.75rem; box-shadow:4px 4px 0 #000; }
     #progress-bar { width:100%; background:#555; border:4px solid #777; height:16px; margin:0.5rem 0; }
     #progress { height:100%; width:0; background:#00ff00; }
@@ -33,20 +34,34 @@
   <main>
     <section id="preclas">
       <h2>PRE-CLASE</h2>
-      <p>Recursos para recordar y entender el Paisaje de Aprendizaje.</p>
+      <!-- Definición: primer paso -->
+      <p><strong>¿Qué es un Paisaje de Aprendizaje?</strong> Un paisaje de aprendizaje integra diversos recursos y espacios (físicos o virtuales) organizados para facilitar procesos de aprendizaje autónomo y colaborativo, permitiendo al estudiante elegir itinerarios según sus necesidades, ritmos y estilos de aprendizaje.</p>
+
+      <!-- Video enriquecido incrustado -->
+      <h3>Video Introductorio</h3>
+      <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+      </div>
+      <a href="https://youtu.be/VIDEO_ID" target="_blank" class="btn">Ver en YouTube</a>
+      <a href="#" class="btn completar" data-activity="video2">MARCAR VIDEO</a>
+
+      <!-- Ejemplo de recurso -->
+      <h3>El siguiente es un ejemplo</h3>
       <!-- Embed Mission: Math from Canva -->
       <div style="position: relative; width: 100%; height: 0; padding-top: 66.6255%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none; padding:0; margin:0;" src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen allow="fullscreen"></iframe>
+        <iframe loading="lazy" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen></iframe>
       </div>
-      <a href="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?utm_content=DAGnxtOqDhk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="btn">Mission: Math de Maileen Julissa Hoyos Castellanos</a>
-      <a href="#" class="btn completar" data-activity="video1">MARCAR VIDEO</a>
+      <a href="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?utm_content=DAGnxtOqDhk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" class="btn">Mission: Math de Maileen Julissa Hoyos Castellanos</a>
+      <a href="#" class="btn completar" data-activity="video1">MARCAR EJEMPLO</a>
     </section>
+
     <section id="clase">
       <h2>EN CLASE</h2>
       <p>Retos colaborativos para aplicar y crear.</p>
       <a href="modulo1_juego.html" class="btn">INICIAR JUEGO</a>
       <a href="#" class="btn completar" data-activity="juego1">MARCAR JUEGO</a>
     </section>
+
     <section id="progreso">
       <h2>PROGRESO</h2>
       <div id="progress-bar"><div id="progress"></div></div>
@@ -58,16 +73,20 @@
       btn.addEventListener('click', () => {
         const act = btn.dataset.activity;
         let completed = JSON.parse(localStorage.getItem('completed'))||{};
-        if (!completed[act]) { completed[act]=true; localStorage.setItem('completed',JSON.stringify(completed)); updateProgress(); }
+        if (!completed[act]) {
+          completed[act] = true;
+          localStorage.setItem('completed', JSON.stringify(completed));
+          updateProgress();
+        }
       });
     });
     function updateProgress() {
-      const completed=JSON.parse(localStorage.getItem('completed'))||{};
-      const total=document.querySelectorAll('.completar').length;
-      const done=Object.keys(completed).length;
-      const percent=(done/total)*100;
-      document.getElementById('progress').style.width=percent+'%';
-      document.getElementById('points').textContent=done*10;
+      const completed = JSON.parse(localStorage.getItem('completed'))||{};
+      const total = document.querySelectorAll('.completar').length;
+      const done = Object.keys(completed).length;
+      const percent = (done/total)*100;
+      document.getElementById('progress').style.width = percent + '%';
+      document.getElementById('points').textContent = done * 10;
     }
     updateProgress();
   </script>
