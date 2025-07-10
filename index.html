@@ -2,162 +2,74 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Paisaje de Aprendizaje - Aula Invertida</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paisaje de Aprendizaje - Flipped Classroom Gamificado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-    header { background: #005baa; color: white; padding: 2rem; text-align: center; }
-    header img { max-height: 80px; margin-bottom: 1rem; }
-    section { padding: 2rem; max-width: 900px; margin: auto; background: white; margin-top: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { color: #005baa; }
-    .question { font-weight: bold; }
-    .option { margin: 0.5rem 0; }
-    .result { font-weight: bold; margin-top: 1rem; }
-    button { padding: 0.5rem 1rem; background: #005baa; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    iframe { width: 100%; height: 315px; margin-top: 1rem; }
+    body { margin:0; padding:0; background:#1a1a1a; color:#fff; font-family:'Press Start 2P', monospace; }
+    header { background:#000080; color:#fff; display:flex; align-items:center; justify-content:space-between; padding:1rem; border-bottom:4px solid #00ffff; }
+    nav a { color:#00ffff; text-decoration:none; font-size:0.75rem; margin:0 0.5rem; }
+    main { padding:2rem; }
+    section { margin-bottom:2rem; }
+    h2 { color:#ff00ff; font-size:1.25rem; text-shadow:2px 2px #000; }
+    .btn { display:inline-block; padding:0.75rem 1.5rem; margin:0.5rem; background:#008000; color:#fff; text-decoration:none; border:4px solid #00ff00; font-size:0.75rem; box-shadow:4px 4px 0 #000; }
+    #progress-bar { width:100%; background:#555; border:4px solid #777; height:16px; margin:0.5rem 0; }
+    #progress { height:100%; width:0; background:#00ff00; }
+    #points { color:#ffff00; }
+    /* pixelated effect */
+    img, iframe { image-rendering:pixelated; }
   </style>
 </head>
 <body>
-
-<header>
-  <img src="logo.png" alt="Logo Paisaje de Aprendizaje">
-  <h1>Paisaje de Aprendizaje</h1>
-  <p>Unidad Didáctica basada en el modelo Flipped Classroom</p>
-</header>
-
-<section>
-  <h2>¿Qué es un Paisaje de Aprendizaje?</h2>
-  <p>El <strong>paisaje de aprendizaje</strong> es una herramienta pedagógica basada en el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>, la <strong>gamificación</strong> y el <strong>aprendizaje personalizado</strong>. Su principal objetivo es fomentar la autonomía, la toma de decisiones y la autorregulación del estudiante a través de rutas flexibles y visuales que se adaptan a sus necesidades, intereses y estilos cognitivos.</p>
-
-  <p>Más que una simple secuencia de tareas, el paisaje actúa como un entorno <em>narrativo y motivador</em> donde el estudiante puede avanzar según su propio ritmo, eligiendo caminos alternativos y desarrollando competencias mediante el uso de TIC. Los paisajes pueden construirse sobre soportes físicos o digitales, siendo estos últimos los más dinámicos, pues integran recursos multimedia, hipervínculos, formularios interactivos y elementos de gamificación (niveles, insignias, recompensas, etc.).</p>
-
-  <p>En el contexto del <strong>modelo de Aula Invertida (Flipped Classroom)</strong>, el paisaje de aprendizaje es especialmente útil: los contenidos teóricos pueden ser explorados en casa mediante vídeos o lecturas, y en el aula se desarrollan actividades de mayor orden cognitivo como la creación, el debate y la reflexión crítica.</p>
-
-  <p>A continuación se muestra un ejemplo de paisaje de aprendizaje interactivo elaborado con Canva:</p>
-
-  <div style="position: relative; width: 100%; height: 0; padding-top: 66.6255%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-      src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-    </iframe>
-  </div>
-  <p><a href="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?utm_content=DAGnxtOqDhk&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Mission: Math</a> de Maileen Julissa Hoyos Castellanos</p>
-</section>
-
-  <section>
-  <h2>Explora los Módulos</h2>
-  <div style="text-align: center; margin-top: 1rem;">
-    <button onclick="openModal('modal1')">Módulo 1</button>
-    <button onclick="openModal('modal2')">Módulo 2</button>
-    <button onclick="openModal('modal3')">Módulo 3</button>
-
-  </div>
-</section>
-
-  <!-- Estilo para modales -->
-<style>
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.6);
-  }
-  .modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 800px;
-    position: relative;
-  }
-  .close {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 1.5rem;
-    color: #005baa;
-    cursor: pointer;
-  }
-  .modal h2 {
-    color: #005baa;
-  }
-</style>
-
-<!-- Módulo 1 -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <h2>Módulo 1: Actividad Interactiva</h2>
-    <p><strong>Pregunta:</strong> ¿Cuál de las siguientes opciones representa mejor el propósito de un paisaje de aprendizaje?</p>
-    <div><input type="radio" name="q1" value="a"> Memorizar datos mediante exámenes estandarizados</div>
-    <div><input type="radio" name="q1" value="b"> Adaptar el aprendizaje a distintos ritmos, estilos y motivaciones</div>
-    <div><input type="radio" name="q1" value="c"> Repetir contenidos de forma lineal</div>
-    <button onclick="checkAnswer('q1', 'b', 'res1')">Enviar</button>
-    <div class="result" id="res1"></div>
-    <h3>Justificación:</h3>
-    <p>Esta actividad fomenta la aplicación de conceptos en clase a través de TIC, permitiendo retroalimentación inmediata. Es útil en el aula invertida porque trabaja niveles superiores del pensamiento tras el estudio previo en casa.</p>
-  </div>
-</div>
-
-<!-- Módulo 2 -->
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal2')">&times;</span>
-    <h2>Módulo 2: Video Enriquecido</h2>
-    <iframe src="https://www.youtube.com/embed/8FvlEkF0A7Y" allowfullscreen></iframe>
-    <h3>Justificación:</h3>
-    <p>El video fue usado como recurso previo en el modelo flipped. Permite a los estudiantes adquirir los conocimientos teóricos en casa, y llegar al aula listos para desarrollar actividades prácticas sobre paisajes de aprendizaje.</p>
-  </div>
-</div>
-
-<!-- Módulo 3 -->
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal3')">&times;</span>
-    <h2>Módulo 3: Cuestionario de Autoevaluación</h2>
-    <p><strong>Pregunta:</strong> ¿Qué elemento se asocia directamente con los paisajes de aprendizaje?</p>
-    <div><input type="radio" name="q2" value="a"> Evaluación uniforme</div>
-    <div><input type="radio" name="q2" value="b"> Itinerarios personalizados de aprendizaje</div>
-    <div><input type="radio" name="q2" value="c"> Repetición mecánica de contenidos</div>
-    <button onclick="checkAnswer('q2', 'b', 'res2')">Enviar</button>
-    <div class="result" id="res2"></div>
-    <h3>Justificación:</h3>
-    <p>El cuestionario permite que el estudiante compruebe su comprensión de forma autónoma, lo que mejora la autorregulación del aprendizaje y fortalece el enfoque flexible del paisaje de aprendizaje.</p>
-  </div>
-</div>
-
-
-<!-- Script para respuestas -->
-
+  <header>
+    <div id="logo"><img src="logo.png" alt="Logo" style="height:48px; image-rendering:pixelated;"></div>
+    <h1 style="font-size:1rem;">PAISAJE DE APRENDIZAJE</h1>
+    <nav>
+      <a href="#preclas">PRE-CLASE</a>
+      <a href="#clase">EN CLASE</a>
+      <a href="#progreso">PROGRESO</a>
+    </nav>
+  </header>
+  <main>
+    <section id="preclas">
+      <h2>PRE-CLASE</h2>
+      <p>Recursos para recordar y entender el Paisaje de Aprendizaje.</p>
+      <!-- Embed Mission: Math from Canva -->
+      <div style="position: relative; width: 100%; height: 0; padding-top: 66.6255%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none; padding:0; margin:0;" src="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?embed" allowfullscreen allow="fullscreen"></iframe>
+      </div>
+      <a href="https://www.canva.com/design/DAGnxtOqDhk/XQkm7K8CXSo8RTbuDthpmw/view?utm_content=DAGnxtOqDhk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="btn">Mission: Math de Maileen Julissa Hoyos Castellanos</a>
+      <a href="#" class="btn completar" data-activity="video1">MARCAR VIDEO</a>
+    </section>
+    <section id="clase">
+      <h2>EN CLASE</h2>
+      <p>Retos colaborativos para aplicar y crear.</p>
+      <a href="modulo1_juego.html" class="btn">INICIAR JUEGO</a>
+      <a href="#" class="btn completar" data-activity="juego1">MARCAR JUEGO</a>
+    </section>
+    <section id="progreso">
+      <h2>PROGRESO</h2>
+      <div id="progress-bar"><div id="progress"></div></div>
+      <p>Puntos: <span id="points">0</span></p>
+    </section>
+  </main>
   <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-
-  function checkAnswer(name, correct, resultId) {
-    const selected = document.querySelector(`input[name="${name}"]:checked`);
-    const result = document.getElementById(resultId);
-    if (!selected) {
-      result.textContent = "Por favor selecciona una opción.";
-      result.style.color = "red";
-    } else if (selected.value === correct) {
-      result.textContent = "¡Correcto!";
-      result.style.color = "green";
-    } else {
-      result.textContent = "Incorrecto. Revisa el contenido.";
-      result.style.color = "red";
+    document.querySelectorAll('.completar').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const act = btn.dataset.activity;
+        let completed = JSON.parse(localStorage.getItem('completed'))||{};
+        if (!completed[act]) { completed[act]=true; localStorage.setItem('completed',JSON.stringify(completed)); updateProgress(); }
+      });
+    });
+    function updateProgress() {
+      const completed=JSON.parse(localStorage.getItem('completed'))||{};
+      const total=document.querySelectorAll('.completar').length;
+      const done=Object.keys(completed).length;
+      const percent=(done/total)*100;
+      document.getElementById('progress').style.width=percent+'%';
+      document.getElementById('points').textContent=done*10;
     }
-  }
- 
-  
-</script>
-
+    updateProgress();
+  </script>
 </body>
 </html>
